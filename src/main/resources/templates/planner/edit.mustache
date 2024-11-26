@@ -1,0 +1,25 @@
+{{>layouts/header}}
+{{#planner}}
+    <form class="container" action="/planner/create" method="post">
+        <input type="hidden" name="id" value={{id}}>
+        <div class="mb-3">
+            <label class="form-label"> </label>
+            <input class="form-control" name="title" value={{title}}>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"> </label>
+            <textarea class="form-control" name="content">{{content}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"> </label>
+            <textarea class="form-control" name="category">{{category}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"> </label>
+            <textarea class="form-control" name="isCompleted">{{isCompleted}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/articles/{{id}}">Back</a>
+    </form>
+{{/planner}}
+{{>layouts/footer}}

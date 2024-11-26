@@ -1,0 +1,25 @@
+{{>layouts/header}}
+
+<table class="table">
+    <thead>
+    <tr>
+        <!--scope="col"은 th요소가 열 전체에 대해 헤더역할을 한다는 뜻-->
+        <th scope="col">Id</th><th scope="col">Title</th><th scope="col">Content</th><th scope="col">Category</th><th scope="col">isCompleted</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#planner}}
+        <tr>
+            <th>{{id}}</th><td>{{title}}</td><td>{{content}}</td><td>{{category}}</td><td>{{isCompleted}}</td>
+        </tr>
+    {{/planner}}
+
+    </tbody>
+</table>
+<!--수정링크-->
+<a href="/planner/{{planner.id}}/edit" class="btn btn-primary">Edit</a>
+<!--삭제링크-->
+<a href="/planner/{{planner.id}}/delete" class="btn btn-primary">Delete</a>
+<a href="/planner">목록 페이지</a>
+
+{{>layouts/footer}}
