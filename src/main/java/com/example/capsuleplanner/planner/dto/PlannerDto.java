@@ -4,6 +4,8 @@ import com.example.capsuleplanner.planner.entity.Planner;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,9 +18,10 @@ public class PlannerDto {
     private String content;
     private String category;
     private Boolean isCompleted = false;
+    private LocalDate date;
 
     public Planner toEntity() {
-        return new Planner(id, title, content, category, isCompleted);
+        return new Planner(id, title, content, category, isCompleted, date);
     }
 
     public void logInfo() {
