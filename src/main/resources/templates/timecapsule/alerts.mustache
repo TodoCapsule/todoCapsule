@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>타임캡슐 알림</title>
+</head>
+<body>
+<h1>타임캡슐 알림</h1>
+<table>
+    <thead>
+    <tr>
+        <th>카테고리</th>
+        <th>할일</th>
+        <th>날짜</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#upcomingCapsules}}
+        <tr>
+            <td>{{category}}</td>
+            <td>{{content}}</td>
+            <td>{{alertDate}}</td>
+        </tr>
+    {{/upcomingCapsules}}
+    </tbody>
+</table>
+</body>
+</html>

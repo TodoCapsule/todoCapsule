@@ -1,6 +1,6 @@
-package com.example.capsuleplanner.dto;
+package com.example.capsuleplanner.planner.dto;
 
-import com.example.capsuleplanner.entity.Planner;
+import com.example.capsuleplanner.planner.entity.Planner;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 

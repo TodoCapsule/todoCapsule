@@ -1,8 +1,8 @@
-package com.example.capsuleplanner.controller;
+package com.example.capsuleplanner.planner.controller;
 
-import com.example.capsuleplanner.dto.PlannerDto;
-import com.example.capsuleplanner.entity.Planner;
-import com.example.capsuleplanner.repository.PlannerRepository;
+import com.example.capsuleplanner.planner.dto.PlannerDto;
+import com.example.capsuleplanner.planner.entity.Planner;
+import com.example.capsuleplanner.planner.repository.PlannerRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

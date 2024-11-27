@@ -1,4 +1,4 @@
-package com.example.capsuleplanner.entity;
+package com.example.capsuleplanner.planner.entity;
 
 import jakarta.persistence.Entity;
 

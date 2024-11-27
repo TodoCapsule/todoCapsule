@@ -1,7 +1,7 @@
-package com.example.capsuleplanner.repository;
+package com.example.capsuleplanner.planner.repository;
 
 
-import com.example.capsuleplanner.entity.Planner;
+import com.example.capsuleplanner.planner.entity.Planner;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
