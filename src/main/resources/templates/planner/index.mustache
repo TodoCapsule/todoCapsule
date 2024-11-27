@@ -2,7 +2,7 @@
 
 <table class="table">
     <thead>
-    <th scope="col">Id</th><th scope="col">Title</th><th scope="col">Content</th><th scope="col">Category</th><th scope="col">isCompleted</th>
+    <th scope="col">Id</th><th scope="col">Title</th><th scope="col">Content</th><th scope="col">Category</th><th scope="col">isCompleted</th><th scope="col">date</th>
     </thead>
     <tbody>
     {{#plannerList}}
@@ -12,6 +12,7 @@
             <td>{{content}}</td>
             <td>{{category}}</td>
             <td>{{isCompleted}}</td>
+            <td>{{date}}</td>
         </tr>
     {{/plannerList}}
     </tbody>
