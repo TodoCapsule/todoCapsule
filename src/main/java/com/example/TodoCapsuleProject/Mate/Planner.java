@@ -1,4 +1,4 @@
-package com.example.capsuleplanner.planner.entity;
+package com.example.TodoCapsuleProject.Mate;
 
 import jakarta.persistence.Entity;
 
@@ -31,3 +31,4 @@ public class Planner {
         log.info("id: {}, title: {}, content: {}, category: {}, isCompleted: {}", id, title, content, category, isCompleted);
     }
 }
+

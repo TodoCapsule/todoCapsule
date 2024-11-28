@@ -1,8 +1,7 @@
-package com.example.capsuleplanner.planner.controller;
+package com.example.TodoCapsuleProject.Mate;
 
-import com.example.capsuleplanner.planner.dto.PlannerDto;
-import com.example.capsuleplanner.planner.entity.Planner;
-import com.example.capsuleplanner.planner.repository.PlannerRepository;
+import com.example.TodoCapsuleProject.Dday.TimeCapsule;
+import com.example.TodoCapsuleProject.Dday.TimeCapsuleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +20,9 @@ public class PlannerController {
     @Autowired
     PlannerRepository plannerRepository;
 
+    @Autowired
+    private TimeCapsuleRepository timeCapsuleRepository;
+
     //새 항목 추가 Form
     @GetMapping("planner/new")
     public String newPlannerForm() {
@@ -34,7 +36,7 @@ public class PlannerController {
         model.addAttribute("plannerList", plannerList);
         return "planner/index";
     }
-
+    
     //생성
     @PostMapping("/planner/create")
     public String addPlanner(PlannerDto plannerDto){
@@ -47,6 +49,18 @@ public class PlannerController {
         //repository로 Entity를 저장
         Planner saved = plannerRepository.save(planner);
         saved.logInfo();
+
+        // 날짜가 설정된 경우 TimeCapsule에 추가
+        if (planner.getDate() != null) {
+            TimeCapsule timeCapsule = new TimeCapsule(
+                    planner.getTitle(),
+                    planner.getContent(),
+                    planner.getCategory(),
+                    planner.getDate(),
+                    false
+            );
+            timeCapsuleRepository.save(timeCapsule);
+        }
 
         return "redirect:/planner/" + saved.getId();
     }

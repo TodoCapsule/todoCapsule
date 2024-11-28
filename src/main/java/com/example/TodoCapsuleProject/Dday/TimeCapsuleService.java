@@ -1,6 +1,4 @@
-package com.example.capsuleplanner.timecapsule.service;
-
-import com.example.capsuleplanner.timecapsule.entity.TimeCapsule;
+package com.example.TodoCapsuleProject.Dday;
 
 import java.util.List;
 

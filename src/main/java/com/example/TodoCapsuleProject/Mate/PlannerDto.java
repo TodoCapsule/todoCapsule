@@ -1,17 +1,13 @@
-package com.example.capsuleplanner.planner.dto;
+package com.example.TodoCapsuleProject.Mate;
 
-import com.example.capsuleplanner.planner.entity.Planner;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Slf4j
-@ToString
+@Getter @Setter
+@AllArgsConstructor @NoArgsConstructor
+@Slf4j @ToString
 public class PlannerDto {
     private Long id;
     private String title;

@@ -1,14 +1,13 @@
-package com.example.capsuleplanner.timecapsule.service.Impl;
+package com.example.TodoCapsuleProject.Dday;
 
-import com.example.capsuleplanner.timecapsule.entity.TimeCapsule;
-import com.example.capsuleplanner.timecapsule.repository.TimeCapsuleRepository;
-import com.example.capsuleplanner.timecapsule.service.TimeCapsuleService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Slf4j
 @Service
 public class TimeCapsuleServiceImpl implements TimeCapsuleService {
 
@@ -17,12 +16,14 @@ public class TimeCapsuleServiceImpl implements TimeCapsuleService {
 
     @Override
     public List<TimeCapsule> getAllCapsules() {
+        log.info("Fetching all time capsules...");
         return timeCapsuleRepository.findAll();
     }
 
     @Override
     public List<TimeCapsule> getUpcomingCapsules() {
         LocalDate today = LocalDate.now();
+        log.info("Calculating upcoming time capsules for alerting... Current date: {}", today);
 
         // 날짜를 계산하며 월말 문제 처리
         int day = today.getDayOfMonth() + 3; // 3일 추가
@@ -42,6 +43,7 @@ public class TimeCapsuleServiceImpl implements TimeCapsuleService {
 
         // 최종적으로 알림 날짜를 계산
         LocalDate alertDate = LocalDate.of(year, month, day);
+        log.info("Calculated alert date: {}", alertDate);
 
         // 해당 알림 날짜로 타임캡슐 검색
         return timeCapsuleRepository.findByAlertDate(alertDate);

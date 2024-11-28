@@ -1,8 +1,5 @@
-package com.example.capsuleplanner.planner.service.Impl;
+package com.example.TodoCapsuleProject.Mate;
 
-import com.example.capsuleplanner.planner.entity.Planner;
-import com.example.capsuleplanner.planner.service.PlannerService;
-import com.example.capsuleplanner.planner.repository.PlannerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

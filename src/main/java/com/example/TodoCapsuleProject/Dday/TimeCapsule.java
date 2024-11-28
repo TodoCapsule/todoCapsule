@@ -1,13 +1,10 @@
-package com.example.capsuleplanner.timecapsule.entity;
+package com.example.TodoCapsuleProject.Dday;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
@@ -18,7 +15,6 @@ public class TimeCapsule {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String title;               // 제목
     private String content;             // 할일 내용
     private String category;            // 카테고리
@@ -31,5 +27,9 @@ public class TimeCapsule {
         this.category = category;
         this.alertDate = alertDate;
         this.isOpened = isOpened;
+    }
+
+    public void logInfo() {
+        log.info("TimeCapsule Created - ID: {}, Title: {}, Category: {}, AlertDate: {}, IsOpened: {}", id, title, category, alertDate, isOpened);
     }
 }

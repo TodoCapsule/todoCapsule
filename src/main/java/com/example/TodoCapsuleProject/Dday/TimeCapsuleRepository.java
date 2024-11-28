@@ -1,6 +1,5 @@
-package com.example.capsuleplanner.timecapsule.repository;
+package com.example.TodoCapsuleProject.Dday;
 
-import com.example.capsuleplanner.timecapsule.entity.TimeCapsule;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
