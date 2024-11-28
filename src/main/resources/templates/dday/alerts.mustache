@@ -1,0 +1,30 @@
+{{> dday/layouts/header}}
+
+<table>
+    <thead>
+    <tr>
+        <th>제목</th>
+        <th>내용</th>
+        <th>카테고리</th>
+        <th>마감 날짜</th>
+        <th>D-Day</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#ddayList}}
+        <tr>
+            <td>{{title}}</td>
+            <td>{{content}}</td>
+            <td>{{category}}</td>
+            <td>{{date}}</td>
+            <td>D-{{remainingDays}}</td>
+        </tr>
+    {{/ddayList}}
+    {{^ddayList}}
+        <tr>
+            <td colspan="5">No D-days available</td>
+        </tr>
+    {{/ddayList}}
+    </tbody>
+</table>
+{{> dday/layouts/footer}}

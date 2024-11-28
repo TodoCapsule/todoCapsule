@@ -1,7 +1,7 @@
 package com.example.TodoCapsuleProject.Mate;
 
-import com.example.TodoCapsuleProject.Dday.TimeCapsule;
-import com.example.TodoCapsuleProject.Dday.TimeCapsuleRepository;
+import com.example.TodoCapsuleProject.Dday.Dday;
+import com.example.TodoCapsuleProject.Dday.DdayRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ public class MateController {
     MateRepository mateRepository;
 
     @Autowired
-    private TimeCapsuleRepository timeCapsuleRepository;
+    private DdayRepository ddayRepository;
 
     //새 항목 추가 Form
     @GetMapping("mate/new")
@@ -50,16 +50,15 @@ public class MateController {
         Mate saved = mateRepository.save(mate);
         saved.logInfo();
 
-        // 날짜가 설정된 경우 TimeCapsule에 추가
+        // 날짜가 설정된 경우 Dday에 추가
         if (mate.getDate() != null) {
-            TimeCapsule timeCapsule = new TimeCapsule(
+            Dday dday = new Dday(
                     mate.getTitle(),
                     mate.getContent(),
                     mate.getCategory(),
-                    mate.getDate(),
-                    false
+                    mate.getDate()
             );
-            timeCapsuleRepository.save(timeCapsule);
+            ddayRepository.save(dday);
         }
 
         return "redirect:/mate/" + saved.getId();
