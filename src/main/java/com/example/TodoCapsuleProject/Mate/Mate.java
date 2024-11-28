@@ -17,18 +17,17 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @ToString
-public class Planner {
+public class Mate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String content;
     private String category;
-    private Boolean isCompleted = false;
     private LocalDate date;
 
     public void logInfo(){
-        log.info("id: {}, title: {}, content: {}, category: {}, isCompleted: {}", id, title, content, category, isCompleted);
+        log.info("id: {}, title: {}, content: {}, category: {}", id, title, content, category);
     }
 }
 

@@ -1,0 +1,55 @@
+{{>layouts/header}}
+
+<div class="container mt-4">
+    <!-- 테이블 -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="text-center">Task</th>
+            <th class="text-center">Title</th>
+            <th class="text-center">Content</th>
+            <th class="text-center">Category</th>
+            <th class="text-center">Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#mateList}}
+            <tr>
+                <td class="text-center">{{id}}</td>
+                <td class="text-center"><a href="/mate/{{id}}">{{title}}</a></td>
+                <td class="text-center">{{content}}</td>
+                <td class="text-center">{{category}}</td>
+                <td class="text-center">{{date}}</td>
+            </tr>
+        {{/mateList}}
+        </tbody>
+    </table>
+
+    <a href="/mate/new" class="btn btn-primary">New</a>
+</div>
+
+<!-- 아이콘 버튼 추가 -->
+<div class="mt-3 text-center">
+    <a href="/alerts" class="btn btn-secondary">
+        <i class="bi bi-list-task"></i> D-day Check
+    </a>
+</div>
+
+{{>layouts/footer}}
+
+<style>
+    /* 테이블 스타일 */
+    table th, table td {
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    table td, table th {
+        vertical-align: middle;
+    }
+
+    /* 테이블에 여백 추가 (알림창 아래로 밀리도록) */
+    .container {
+        padding-top: 20px;
+    }
+</style>
