@@ -1,15 +1,26 @@
-{{> timecapsule/layouts/header}}
+{{> timecapsule/layouts/header}}    // 수정
 
 <table>
+    <thead>
+    <tr>
+        <th>제목</th>
+        <th>내용</th>
+        <th>카테고리</th>
+        <th>마감 날짜</th>
+        <th>D-Day</th>
+    </tr>
+    </thead>
     <tbody>
-    {{#upcomingCapsules}}
+    {{#ddayList}}
         <tr>
-            <td>{{category}}</td>
+            <td>{{title}}</td>
             <td>{{content}}</td>
-            <td>{{alertDate}}</td>
+            <td>{{category}}</td>
+            <td>{{dday}}</td>
+            <td>D-{{remainingDays}}</td>
         </tr>
-    {{/upcomingCapsules}}
+    {{/ddayList}}
     </tbody>
 </table>
 
-{{> timecapsule/layouts/footer}}
+{{> timecapsule/layouts/footer}}    // 수정
