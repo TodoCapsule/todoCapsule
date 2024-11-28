@@ -17,7 +17,7 @@ public class DdayServiceImpl implements DdayService{
 
     // Mate에서 할일을 Dday로 추가
     @Override
-    public void addDdayFromMate(String title, String content, String category, String date) {
+    public void addDdayFromMate(String title, String content, String category, LocalDate date) {
         Dday dday = new Dday(title, content, category, date);
         ddayRepository.save(dday);  // Dday 테이블에 저장
     }
@@ -26,8 +26,10 @@ public class DdayServiceImpl implements DdayService{
     @Override
     public List<DdayDTO> getDdayList() {
         return ddayRepository.findAll().stream().map(dday -> {
-            LocalDate today = LocalDate.now();
-            LocalDate targetDate = LocalDate.parse(dday.getDate());
+            LocalDate today = LocalDate.now();      // 오늘 날짜
+            LocalDate targetDate = dday.getDate();  // Dday 엔티티에서 직접 LocalDate 사용
+
+            // 남은 일수 계산
             long remainingDays = ChronoUnit.DAYS.between(today, targetDate);
 
             return new DdayDTO(

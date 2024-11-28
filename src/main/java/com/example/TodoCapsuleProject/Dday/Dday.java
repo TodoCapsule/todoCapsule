@@ -22,9 +22,9 @@ public class Dday {
     private String title;           // 제목
     private String content;         // 할일 내용
     private String category;        // 카테고리
-    private String date;            // Mate에서 받아온 날짜(기한)
+    private LocalDate date;         // Mate에서 받아온 날짜(기한)
 
-    public Dday(String title, String content, String category, String date) {
+    public Dday(String title, String content, String category, LocalDate date) {
         this.title = title;
         this.content = content;
         this.category = category;
