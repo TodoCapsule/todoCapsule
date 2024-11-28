@@ -1,23 +1,22 @@
-{{>layouts/header}}
+{{> timecapsule/layouts/header}}
 
 <div class="container mt-4">
+    <h1>Time Capsule</h1>
     <!-- 테이블 -->
     <table class="table">
         <thead>
         <tr>
-            <th class="text-center">Task</th>
             <th class="text-center">Title</th>
             <th class="text-center">Content</th>
             <th class="text-center">Category</th>
             <th class="text-center">Date</th>
-            <th class="text-center">Completed</th>
         </tr>
         </thead>
         <tbody>
         {{#plannerList}}
             <tr>
                 <td class="text-center">{{id}}</td>
-                <td class="text-center"><a href="/planner/{{id}}">{{title}}</a></td>
+                <td class="text-center"><a href="/timecapsule/{{id}}">{{title}}</a></td>
                 <td class="text-center">{{content}}</td>
                 <td class="text-center">{{category}}</td>
                 <td class="text-center">{{date}}</td>
@@ -48,3 +47,16 @@
         padding-top: 20px;
     }
 </style>
+
+{{> timecapsule/layouts/footer}}
+
+
+
+
+<p>마감 기한이 존재하는 할일을 타임캡슐에서 관리하세요!</p>
+
+<ul>
+    <li><a href="/timecapsules">타임캡슐 목록 보기</a></li>
+    <li><a href="/alerts">다가오는 타임캡슐 알림 보기</a></li>
+</ul>
+
