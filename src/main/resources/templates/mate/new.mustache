@@ -1,0 +1,24 @@
+{{>layouts/header}}
+
+<form class="container" action="/mate/create" method="post">
+    <div class="mb-3">       <!--Set margin bottom to 3-->
+        <label class="form-label">제목</label>
+        <input class="form-control" name="title" value="title111">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+        <textarea class="form-control" name="content">content1111</textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">카테고리</label>
+        <textarea class="form-control" name="category">category1</textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label"> </label>
+        <textarea class="form-control" name="date">0000-00-00</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{{>layouts/footer}}

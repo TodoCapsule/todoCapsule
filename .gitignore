@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Ignore specific file
+build/tmp/compileJava/previous-compilation-data.bin

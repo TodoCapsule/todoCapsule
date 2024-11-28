@@ -13,20 +13,19 @@
         </tr>
         </thead>
         <tbody>
-        {{#plannerList}}
+        {{#mateList}}
             <tr>
                 <td class="text-center">{{id}}</td>
                 <td class="text-center"><a href="/timecapsule/{{id}}">{{title}}</a></td>
                 <td class="text-center">{{content}}</td>
                 <td class="text-center">{{category}}</td>
                 <td class="text-center">{{date}}</td>
-                <td class="text-center">{{isCompleted}}</td>
             </tr>
-        {{/plannerList}}
+        {{/mateList}}
         </tbody>
     </table>
 
-    <a href="/planner/new" class="btn btn-primary">새 항목 추가</a>
+    <a href="/mate/new" class="btn btn-primary">새 항목 추가</a>
 </div>
 
 {{>layouts/footer}}

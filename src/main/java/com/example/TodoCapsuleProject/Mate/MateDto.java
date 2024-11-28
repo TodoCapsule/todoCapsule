@@ -8,16 +8,15 @@ import java.time.LocalDate;
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 @Slf4j @ToString
-public class PlannerDto {
+public class MateDto {
     private Long id;
     private String title;
     private String content;
     private String category;
-    private Boolean isCompleted = false;
     private LocalDate date;
 
-    public Planner toEntity() {
-        return new Planner(id, title, content, category, isCompleted, date);
+    public Mate toEntity() {
+        return new Mate(id, title, content, category, date);
     }
 
     public void logInfo() {
