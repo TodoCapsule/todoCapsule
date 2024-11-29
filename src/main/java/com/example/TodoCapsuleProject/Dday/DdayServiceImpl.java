@@ -26,11 +26,8 @@ public class DdayServiceImpl implements DdayService{
     @Override
     public List<DdayDTO> getDdayList() {
         return ddayRepository.findAll().stream().map(dday -> {
-            LocalDate today = LocalDate.now();      // 오늘 날짜
-            LocalDate targetDate = dday.getDate();  // Dday 엔티티에서 직접 LocalDate 사용
-
-            // 남은 일수 계산
-            long remainingDays = ChronoUnit.DAYS.between(today, targetDate);
+            // Dday 엔티티에서 직접 LocalDate 사용하여 남은 일수 계산
+            long remainingDays = dday.getRemainingDays();  // D-Day 남은 일수
 
             return new DdayDTO(
                     dday.getTitle(),

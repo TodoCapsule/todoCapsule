@@ -42,8 +42,4 @@ public class Dday {
         // 현재 날짜와 D-Day 날짜 차이 계산
         return (int) ChronoUnit.DAYS.between(LocalDate.now(), date);
     }
-
-    public void setRemainingDays(int remainingDays) {
-        this.remainingDays = remainingDays;
-    }
 }

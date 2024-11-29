@@ -1,30 +1,69 @@
-{{> dday/layouts/header}}
-
+{{>layouts/header}}
 <table>
     <thead>
     <tr>
-        <th>제목</th>
-        <th>내용</th>
-        <th>카테고리</th>
-        <th>마감 날짜</th>
-        <th>D-Day</th>
+        <th class="text-center">제목</th>
+        <th class="text-center">내용</th>
+        <th class="text-center">카테고리</th>
+        <th class="text-center">마감날짜</th>
+        <th class="text-center">D-Day</th>
     </tr>
     </thead>
     <tbody>
     {{#ddayList}}
         <tr>
-            <td>{{title}}</td>
-            <td>{{content}}</td>
-            <td>{{category}}</td>
-            <td>{{date}}</td>
-            <td>D-{{remainingDays}}</td>
+            <td class="text-center">{{title}}</td>
+            <td class="text-center">{{content}}</td>
+            <td class="text-center">{{category}}</td>
+            <td class="text-center">{{date}}</td>
+            <td class="text-center">D-{{remainingDays}}</td>
         </tr>
     {{/ddayList}}
     {{^ddayList}}
         <tr>
-            <td colspan="5">No D-days available</td>
+            <td colspan="5">No D-days</td>
         </tr>
     {{/ddayList}}
     </tbody>
 </table>
-{{> dday/layouts/footer}}
+
+<div class="btn-container">
+    <a href="/mate" class="btn btn-primary">Main Page</a>
+</div>
+
+{{>layouts/footer}}
+
+<style>
+    /* 테이블 스타일 */
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* 중앙 정렬을 위한 유틸리티 클래스 */
+    .text-center {
+        text-align: center;
+    }
+
+    /* 버튼을 중앙에 배치하기 위한 스타일 */
+    .btn-container {
+        text-align: center; /* 부모 요소가 중앙 정렬 */
+        margin-top: 20px;   /* 버튼 위에 여백 추가 */
+    }
+</style>
