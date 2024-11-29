@@ -1,4 +1,4 @@
-{{>layouts/header}}
+{{>mate/layouts/header}}
 {{#mate}}
     <form class="container" action="/mate/create" method="post">
         <input type="hidden" name="id" value={{id}}>
@@ -19,7 +19,7 @@
             <textarea class="form-control" name="date">{{date}}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="/mate/{{id}}">Back</a>
+        <a href="/mate/{{id}}" class="btn btn-primary">Back</a>
     </form>
 {{/mate}}
-{{>layouts/footer}}
+{{>mate/layouts/footer}}
