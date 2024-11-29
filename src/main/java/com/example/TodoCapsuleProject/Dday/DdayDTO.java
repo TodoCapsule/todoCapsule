@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor @ToString @Slf4j
 public class DdayDTO {
+    private Long id;
     private String title;          // 제목
     private String content;        // 내용
     private String category;       // 카테고리

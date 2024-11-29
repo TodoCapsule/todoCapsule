@@ -1,6 +1,7 @@
 package com.example.TodoCapsuleProject.Dday;
 
 import com.example.TodoCapsuleProject.Mate.Mate;
+import com.example.TodoCapsuleProject.Mate.MateRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,22 +17,22 @@ public class DdayController {
     private DdayService ddayService;
 
     @Autowired
-    private DdayRepository ddayRepository;
+    private MateRepository mateRepository;
 
     // D-Day 목록을 보여주는 메서드
     @GetMapping("/alerts")
     public String showDdayAlerts(Model model) {
-        List<Dday> ddayList = ddayRepository.findAll();
-        log.info("Dday 리스트: {}", ddayList);
+        List<Mate> mateList = mateRepository.findAll();
+        log.info("Dday 리스트: {}", mateList);
 
-        for (Dday dday : ddayList) {
-            log.info("제목: {}, 남은 일수: {}", dday.getTitle(), dday.getRemainingDays());
+        for (Mate mate : mateList) {
+            log.info("제목: {}, 남은 일수: {}", mate.getTitle(),mate.getRemainingDays());
         }
 
-        model.addAttribute("ddayList", ddayList);
+        model.addAttribute("mateList", mateList);
 
-        for (Dday dday : ddayList) {
-            log.info("남은 일수 (remainingDays): {}", dday.getRemainingDays());
+        for (Mate mate : mateList) {
+            log.info("남은 일수 (remainingDays): {}", mate.getRemainingDays());
         }
         return "dday/alerts";
     }

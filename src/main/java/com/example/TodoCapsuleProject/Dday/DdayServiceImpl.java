@@ -30,6 +30,7 @@ public class DdayServiceImpl implements DdayService{
             long remainingDays = dday.getRemainingDays();  // D-Day 남은 일수
 
             return new DdayDTO(
+                    dday.getId(),
                     dday.getTitle(),
                     dday.getContent(),
                     dday.getCategory(),

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -90,19 +91,23 @@ public class MateController {
     }
     //수정
     @PostMapping("/mate/update")
-    public String update(MateDto mateDto){
-        log.info(mateDto.toString()); //DTO 확인
+    public String updateMate(@ModelAttribute MateDto mateDto, RedirectAttributes rttr) {
+        log.info("수정 요청 데이터: {}", mateDto);
 
-        //DTO -> Entity
-        Mate mate = mateDto.toEntity();
-        log.info(mate.toString()); //entity 변환 확인
+        Mate existingMate = mateRepository.findById(mateDto.getId()).orElse(null);
 
-        Mate target = mateRepository.findById(mate.getId()).orElse(null);
-        if(target != null){
-            mateRepository.save(mate);
+        if (existingMate != null) {
+            existingMate.setTitle(mateDto.getTitle());
+            existingMate.setContent(mateDto.getContent());
+            existingMate.setCategory(mateDto.getCategory());
+            existingMate.setDate(mateDto.getDate());
+            mateRepository.save(existingMate);
+            rttr.addFlashAttribute("msg", "수정이 완료되었습니다.");
+        } else {
+            rttr.addFlashAttribute("msg", "수정할 Mate를 찾을 수 없습니다.");
         }
-        //redirect
-        return "redirect:/mate/" + target.getId();
+
+        return "redirect:/mate";
     }
 
     //삭제
@@ -114,7 +119,7 @@ public class MateController {
             //삭제 완료 메시지
             rttr.addFlashAttribute("msg", ".");
         }
-        //index 페이지로 redirect
+        //redirect
         return "redirect:/mate";
     }
 }

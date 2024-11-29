@@ -1,37 +1,37 @@
-{{>layouts/header}}
+{{>dday/layouts/header}}
 <table>
     <thead>
     <tr>
+        <th class="text-center">id</th>
         <th class="text-center">제목</th>
         <th class="text-center">내용</th>
         <th class="text-center">카테고리</th>
-        <th class="text-center">마감날짜</th>
+        <th class="text-center">날짜</th>
         <th class="text-center">D-Day</th>
     </tr>
     </thead>
     <tbody>
-    {{#ddayList}}
+    {{#mateList}}
         <tr>
+            <td class="text-center">{{id}}</td>
             <td class="text-center">{{title}}</td>
             <td class="text-center">{{content}}</td>
             <td class="text-center">{{category}}</td>
             <td class="text-center">{{date}}</td>
             <td class="text-center">D-{{remainingDays}}</td>
         </tr>
-    {{/ddayList}}
-    {{^ddayList}}
+    {{/mateList}}
+    {{^mateList}}
         <tr>
             <td colspan="5">No D-days</td>
         </tr>
-    {{/ddayList}}
+    {{/mateList}}
     </tbody>
 </table>
 
 <div class="btn-container">
     <a href="/mate" class="btn btn-primary">Main Page</a>
 </div>
-
-{{>layouts/footer}}
 
 <style>
     /* 테이블 스타일 */
