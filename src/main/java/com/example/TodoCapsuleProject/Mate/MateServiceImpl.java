@@ -16,14 +16,14 @@ public class MateServiceImpl implements MateService {
         this.mateRepository = mateRepository;
     }
 
-    //모든 Todo 항목 가져오기
+    //모든 Mate 항목 가져오기
     @Override
     public List<Mate> getMateList() {
         List<Mate> mates = mateRepository.findAll();
         return mates;
     }
 
-    //특정 Todo 항목 가져오기
+    //특정 Mate 항목 가져오기
     public Mate getMate(Long id){
         return mateRepository.findById(id).orElse(null);
     }

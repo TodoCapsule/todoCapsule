@@ -24,8 +24,6 @@ public class Dday {
     private String content;         // 할일 내용
     private String category;        // 카테고리
     private LocalDate date;         // Mate에서 받아온 날짜(기한)
-    private int remainingDays;
-
 
     public Dday(String title, String content, String category, LocalDate date) {
         this.title = title;
@@ -38,8 +36,11 @@ public class Dday {
         log.info("D-Day Setting - ID: {}, Title: {}, Category: {}, Date: {}", id, title, category, date);
     }
 
+    // 현재 날짜와 D-Day 날짜 차이 계산
     public int getRemainingDays() {
-        // 현재 날짜와 D-Day 날짜 차이 계산
+        if (date == null) {
+            return -1; // 날짜가 설정되지 않은 경우 -1 반환
+        }
         return (int) ChronoUnit.DAYS.between(LocalDate.now(), date);
     }
 }

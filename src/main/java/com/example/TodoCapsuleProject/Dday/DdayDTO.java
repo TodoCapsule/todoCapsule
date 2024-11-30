@@ -1,5 +1,6 @@
 package com.example.TodoCapsuleProject.Dday;
 
+import com.example.TodoCapsuleProject.Mate.Mate;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -13,4 +14,12 @@ public class DdayDTO {
     private String category;       // 카테고리
     private LocalDate date;        // 기한 날짜
     private long remainingDays;    // 남은 일수
+
+    public Dday toEntity() {
+        return new Dday(title, content, category, date);
+    }
+
+    public void logInfo() {
+        log.info("title: {}, content: {}, category: {} date: {}", title, content, category, date);
+    }
 }

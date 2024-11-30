@@ -89,6 +89,7 @@ public class MateController {
 
         return "mate/edit";
     }
+
     //수정
     @PostMapping("/mate/update")
     public String updateMate(@ModelAttribute MateDto mateDto, RedirectAttributes rttr) {

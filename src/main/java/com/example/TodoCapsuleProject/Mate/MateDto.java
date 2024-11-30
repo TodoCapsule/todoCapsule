@@ -20,6 +20,6 @@ public class MateDto {
     }
 
     public void logInfo() {
-        log.info("title: {}, content: {} category: {}", title, content, category );
+        log.info("title: {}, content: {}, category: {}, date: {}", title, content, category, date);
     }
 }
