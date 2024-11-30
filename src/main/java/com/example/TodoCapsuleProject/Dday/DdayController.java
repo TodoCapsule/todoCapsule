@@ -14,9 +14,6 @@ import java.util.List;
 @Controller
 public class DdayController {
     @Autowired
-    private DdayService ddayService;
-
-    @Autowired
     private MateRepository mateRepository;
 
     // D-Day 목록을 보여주는 메서드

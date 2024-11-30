@@ -17,7 +17,6 @@ import java.util.List;
 @Controller
 @Slf4j
 public class MateController {
-
     @Autowired
     MateRepository mateRepository;
 
@@ -57,7 +56,8 @@ public class MateController {
                     mate.getTitle(),
                     mate.getContent(),
                     mate.getCategory(),
-                    mate.getDate()
+                    mate.getDate(),
+                    mate.getRemainingDays()
             );
             ddayRepository.save(dday);
         }
@@ -107,7 +107,6 @@ public class MateController {
         } else {
             rttr.addFlashAttribute("msg", "수정할 Mate를 찾을 수 없습니다.");
         }
-
         return "redirect:/mate";
     }
 
@@ -118,7 +117,7 @@ public class MateController {
         if(target != null){
             mateRepository.deleteById(id);
             //삭제 완료 메시지
-            rttr.addFlashAttribute("msg", ".");
+            rttr.addFlashAttribute("msg", "삭제가 완료되었습니다.");
         }
         //redirect
         return "redirect:/mate";

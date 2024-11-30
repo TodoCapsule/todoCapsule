@@ -16,10 +16,10 @@ public class DdayDTO {
     private long remainingDays;    // 남은 일수
 
     public Dday toEntity() {
-        return new Dday(title, content, category, date);
+        return new Dday(title, content, category, date, remainingDays);
     }
 
     public void logInfo() {
-        log.info("title: {}, content: {}, category: {} date: {}", title, content, category, date);
+        log.info("title: {}, content: {}, category: {}, date: {}, D-day: {}", title, content, category, date, remainingDays);
     }
 }

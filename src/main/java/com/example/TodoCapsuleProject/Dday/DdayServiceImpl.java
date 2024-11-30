@@ -17,8 +17,8 @@ public class DdayServiceImpl implements DdayService{
 
     // Mate에서 할일을 Dday로 추가
     @Override
-    public void addDdayFromMate(String title, String content, String category, LocalDate date) {
-        Dday dday = new Dday(title, content, category, date);
+    public void addDdayFromMate(String title, String content, String category, LocalDate date, Long remainingDays) {
+        Dday dday = new Dday(title, content, category, date, remainingDays);
         ddayRepository.save(dday);  // Dday 테이블에 저장
     }
 
