@@ -11,13 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-@Slf4j
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@AllArgsConstructor @NoArgsConstructor @Getter @Setter @ToString @Slf4j
 public class Mate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
